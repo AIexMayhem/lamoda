@@ -86,7 +86,7 @@ class _MyStatefulAppState extends State<MyStatefulApp> {
           child: Column(
             children: [
               Container(
-                margin: const EdgeInsets.all(5.0),
+                margin: const EdgeInsets.all(5),
                 child: TextField(
                   decoration: InputDecoration(
                     hintStyle: TextStyle(fontSize: 15),
