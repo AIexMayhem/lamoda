@@ -48,14 +48,19 @@ class _MyStatefulAppState extends State<MyStatefulApp> {
     urls.clear();
     saleNotes.clear();
     setState(() {});
+    answer = "Поиск...";
     Response response =
         await get("http://server.getoutfit.ru/offers?description=$orderName");
     var statCode = response.statusCode;
     if (statCode == 200) {
       var decodedAns = jsonDecode(response.body);
-      if (decodedAns.lenght == 0) {
+      if (decodedAns.length == 0) {
         setState(() {
           answer = "Не найдено";
+        });
+      } else {
+        setState(() {
+          answer = "Список товаров";
         });
       }
       for (int i = 0; i < decodedAns.length; i++) {
@@ -103,8 +108,8 @@ class _MyStatefulAppState extends State<MyStatefulApp> {
                   },
                 ),
               ),
-              Divider(thickness: 1.5, color: Colors.blue),
               Text(answer),
+              Divider(thickness: 1.5, color: Colors.blue),
               Expanded(
                   child: ListView.separated(
                 itemCount: names.length,
