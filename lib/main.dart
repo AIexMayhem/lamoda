@@ -23,7 +23,7 @@ class MyStatefulApp extends StatefulWidget {
 }
 
 class _MyStatefulAppState extends State<MyStatefulApp> {
-  String orderName, answer = "";
+  String orderName, answer = "Lamoda Shop";
   List<String> names = [];
   List<String> pics = [];
   List<String> urls = [];
